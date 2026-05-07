@@ -1,10 +1,7 @@
 name: 'Security: Publish fix'
 
 on:
-  pull_request:
-    types: [closed]
-    branches: [master]
-
+  workflow_dispatch:
 jobs:
   sync-security-fix:
     if: github.repository == 'n8n-io/n8n-private' && github.event.pull_request.merged == true

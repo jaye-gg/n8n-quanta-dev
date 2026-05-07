@@ -2,11 +2,6 @@ name: 'Release: Promote GitHub Releases'
 run-name: 'Promoting GitHub Release ${{ inputs.version-tag }} to latest'
 
 on:
-  workflow_call:
-    inputs:
-      version-tag:
-        required: true
-        type: string
   workflow_dispatch:
     inputs:
       version-tag:
@@ -14,6 +9,11 @@ on:
         required: true
         type: string
 
+  workflow_call:
+    inputs:
+      version-tag:
+        required: true
+        type: string
 permissions:
   contents: write
 

@@ -1,6 +1,7 @@
 name: 'Sec: CI Checks'
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       ref:

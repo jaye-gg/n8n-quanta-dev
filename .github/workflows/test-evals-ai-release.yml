@@ -1,9 +1,7 @@
 name: 'Test: Evals AI (Release)'
 
 on:
-  release:
-    types: [published]
-
+  workflow_dispatch:
 jobs:
   check-minor-release:
     name: Check Minor Release

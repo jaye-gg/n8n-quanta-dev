@@ -2,14 +2,6 @@ name: 'Release: Update pointer tag'
 run-name: 'Update pointer tag: ${{ inputs.track }} -> ${{ inputs.version-tag }}'
 
 on:
-  workflow_call:
-    inputs:
-      track:
-        required: true
-        type: string
-      version-tag:
-        required: true
-        type: string
   workflow_dispatch:
     inputs:
       track:
@@ -22,6 +14,14 @@ on:
         required: true
         type: string
 
+  workflow_call:
+    inputs:
+      track:
+        required: true
+        type: string
+      version-tag:
+        required: true
+        type: string
 permissions:
   contents: write
 

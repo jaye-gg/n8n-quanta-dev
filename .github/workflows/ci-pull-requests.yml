@@ -1,9 +1,7 @@
 name: 'CI: Pull Requests (Build, Test, Lint)'
 
 on:
-  pull_request:
-  merge_group:
-
+  workflow_dispatch:
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.event.merge_group.head_sha || github.ref }}
   cancel-in-progress: true
