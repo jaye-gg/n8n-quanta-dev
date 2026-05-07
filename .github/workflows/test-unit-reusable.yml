@@ -1,6 +1,7 @@
 name: 'Test: Unit'
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       ref:

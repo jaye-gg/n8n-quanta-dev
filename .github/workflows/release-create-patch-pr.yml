@@ -2,13 +2,6 @@ name: 'Release: Create Patch Release PR'
 run-name: 'Release: Create Patch Release PR for track ${{ inputs.track }}'
 
 on:
-  workflow_call:
-    inputs:
-      track:
-        description: 'Release Track'
-        required: true
-        type: string
-
   workflow_dispatch:
     inputs:
       track:
@@ -16,6 +9,13 @@ on:
         required: true
         type: choice
         options: [stable, beta, v1]
+
+  workflow_call:
+    inputs:
+      track:
+        description: 'Release Track'
+        required: true
+        type: string
 
 jobs:
   determine-version-info:

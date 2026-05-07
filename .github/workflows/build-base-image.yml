@@ -1,16 +1,6 @@
 name: 'Build: Base Image'
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'docker/images/n8n-base/Dockerfile'
-      - '.github/workflows/build-base-image.yml'
-  pull_request:
-    paths:
-      - 'docker/images/n8n-base/Dockerfile'
-      - '.github/workflows/build-base-image.yml'
   workflow_dispatch:
     inputs:
       push:

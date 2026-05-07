@@ -1,23 +1,6 @@
 name: 'Release: Create Pull Request'
 
 on:
-  workflow_call:
-    inputs:
-      base-branch:
-        description: 'The branch, tag, or commit to create this release PR from.'
-        required: true
-        type: string
-
-      release-type:
-        description: 'A SemVer release type.'
-        required: true
-        type: string
-
-    outputs:
-      pull-request-number:
-        description: 'Number of the created pull request'
-        value: ${{ jobs.create-release-pr.outputs.pull-request-number }}
-
   workflow_dispatch:
     inputs:
       base-branch:
@@ -36,6 +19,23 @@ on:
           - major
           - experimental
           - premajor
+
+  workflow_call:
+    inputs:
+      base-branch:
+        description: 'The branch, tag, or commit to create this release PR from.'
+        required: true
+        type: string
+
+      release-type:
+        description: 'A SemVer release type.'
+        required: true
+        type: string
+
+    outputs:
+      pull-request-number:
+        description: 'Number of the created pull request'
+        value: ${{ jobs.create-release-pr.outputs.pull-request-number }}
 
 permissions:
   contents: write

@@ -1,6 +1,7 @@
 name: 'Test: Workflow scripts'
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       ref:

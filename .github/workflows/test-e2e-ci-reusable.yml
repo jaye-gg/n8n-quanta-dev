@@ -1,6 +1,7 @@
 name: 'Test: E2E CI'
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       branch:

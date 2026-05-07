@@ -2,6 +2,7 @@ name: 'Release: Merge tag to branch'
 run-name: 'Merge n8n@${{ inputs.version }} to ${{ inputs.target-branch }}'
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       version:

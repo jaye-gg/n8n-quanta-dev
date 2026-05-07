@@ -3,6 +3,7 @@ name: 'Util: Approve and set Automerge'
 run-name: Approve and automerge PR ${{ inputs.pull-request-number }}
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       pull-request-number:

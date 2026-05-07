@@ -10,8 +10,17 @@ env:
   NODE_VERSION: '24.13.1'
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      push_enabled:
+        description: 'Push image to registry'
+        required: false
+        type: boolean
+        default: true
+      success_url:
+        description: 'URL to call after the build is successful'
+        required: false
+        type: string
 
   workflow_call:
     inputs:
@@ -29,18 +38,6 @@ on:
         required: false
         type: boolean
         default: true
-
-  workflow_dispatch:
-    inputs:
-      push_enabled:
-        description: 'Push image to registry'
-        required: false
-        type: boolean
-        default: true
-      success_url:
-        description: 'URL to call after the build is successful'
-        required: false
-        type: string
 
 jobs:
   determine-build-context:

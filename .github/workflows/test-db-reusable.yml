@@ -1,6 +1,7 @@
 name: 'Test: DB Integration'
 
 on:
+  workflow_dispatch:
   workflow_call:
     inputs:
       ref:
